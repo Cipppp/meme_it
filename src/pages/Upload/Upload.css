@@ -1,0 +1,21 @@
+.content {
+    background-color: #6f3096;
+    padding: 10rem;
+}
+
+.upload-card {
+    padding: 5rem;
+}
+
+.upload-button {
+    background-color: #6f3096;
+    border: none;
+    color: white;
+    padding: 0.7rem 2.6rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}

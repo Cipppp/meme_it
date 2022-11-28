@@ -1,12 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainNavbar from './components/MainNavbar';
+import Home from './pages/Home/Home.jsx';
 import './App.css';
-import Homepage from './components/Homepage';
+import Upload from './pages/Upload/Upload';
+import Footer from './components/Footer';
+import MemeSection from './pages/MemeSection/MemeSection';
+import TestPage from './pages/TestPage/TestPage';
 
 function App() {
     return (
-        <>
-            <Homepage />
-        </>
+        <Router>
+            <MainNavbar />
+            {/* <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/upload" element={<Upload />} />
+            </Routes> */}
+            <Home />
+            <Upload />
+            {/* <MemeSection /> */}
+            {/* <TestPage /> */}
+            <Footer />
+        </Router>
     );
 }
 
