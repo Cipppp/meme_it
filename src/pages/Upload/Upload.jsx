@@ -48,7 +48,11 @@ function Upload() {
         <>
             <div className="content">
                 <Row className="bg-white rounded upload-card">
-                    <Col className="d-flex flex-column align-items-center justify-content-center">
+                    <Col
+                        className="d-flex flex-column align-items-center justify-content-center"
+                        xs={12}
+                        md={6}
+                    >
                         <Row>
                             <h2 className="fs-1">
                                 Ai tupeu și crezi că ești amuzant?
@@ -61,7 +65,7 @@ function Upload() {
                             </p>
                         </Row>
                     </Col>
-                    <Col>
+                    <Col xs={12} md={6}>
                         <Form>
                             <Form.Group className="mb-3" controlId="Descriere">
                                 <Form.Label>Descriere</Form.Label>

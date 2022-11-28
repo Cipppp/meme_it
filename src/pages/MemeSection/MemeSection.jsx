@@ -18,6 +18,7 @@ function MemeSection({ thumbs }) {
                         src={meme1}
                         alt=""
                         style={{ height: '24rem', width: '24rem' }}
+                        className="img-fluid"
                     />
                 </Col>
                 <Col>

@@ -7,6 +7,7 @@ import Upload from './pages/Upload/Upload';
 import Footer from './components/Footer';
 import MemeSection from './pages/MemeSection/MemeSection';
 import TestPage from './pages/TestPage/TestPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (

@@ -11,7 +11,11 @@ function Homepage() {
         <>
             <Container>
                 <Row>
-                    <Col className="d-flex flex-column align-items-center justify-content-center">
+                    <Col
+                        xs={12}
+                        md={6}
+                        className="d-flex flex-column align-items-center justify-content-center"
+                    >
                         <Row>
                             <h1>
                                 Partajarea de meme-uri nu a fost niciodată mai
@@ -31,8 +35,8 @@ function Homepage() {
                             </Button>
                         </Row>
                     </Col>
-                    <Col>
-                        <img src={homeImage} alt="" />
+                    <Col md={6} xs={12}>
+                        <img src={homeImage} alt="" className="img-fluid" />
                     </Col>
                 </Row>
             </Container>

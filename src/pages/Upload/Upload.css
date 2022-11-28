@@ -1,10 +1,22 @@
 .content {
     background-color: #6f3096;
-    padding: 10rem;
+    padding: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 2rem;
+    }
 }
 
 .upload-card {
     padding: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .upload-card {
+        padding: 2rem;
+    }
 }
 
 .upload-button {
