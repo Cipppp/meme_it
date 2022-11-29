@@ -17,13 +17,13 @@ function Homepage() {
                         className="d-flex flex-column align-items-center justify-content-center"
                     >
                         <Row>
-                            <h1>
+                            <h1 className="d-flex align-items-center justify-content-center text-justify text-center">
                                 Partajarea de meme-uri nu a fost niciodată mai
                                 simplă!
                             </h1>
                         </Row>
                         <Row>
-                            <p>
+                            <p className="text-center">
                                 Platforma ideală pentru studenții de la
                                 Politehnică, amuzați de câte materii o să pice
                                 semestrul asta.
