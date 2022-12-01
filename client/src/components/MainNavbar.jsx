@@ -23,6 +23,11 @@ function MainNavbar() {
         setModalShow(true);
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.reload();
+    };
+
     return (
         <>
             <Navbar className="fixed-top shadow" bg="white">
