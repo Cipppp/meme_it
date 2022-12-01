@@ -7,7 +7,7 @@ import { ReactComponent as MemeITLogo } from '../assets/memeit_logo.svg';
 function MainNavbar() {
     return (
         <>
-            <Navbar bg="light">
+            <Navbar className="fixed-top shadow" bg="white">
                 <Container>
                     <Navbar.Brand href="#home">
                         <MemeITLogo />

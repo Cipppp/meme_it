@@ -13,7 +13,11 @@ function MemeSection({ thumbs }) {
                 <h1>Most Viewed</h1>
             </Row>
             <Row className="mb-4">
-                <Col className="d-flex flex-column align-items-center justify-content-center">
+                <Col
+                    className="d-flex flex-column align-items-center justify-content-center"
+                    xs={12}
+                    md={6}
+                >
                     <img
                         src={meme1}
                         alt=""
@@ -21,14 +25,14 @@ function MemeSection({ thumbs }) {
                         className="img-fluid"
                     />
                 </Col>
-                <Col>
+                <Col xs={12} md={6}>
                     <img
                         src={meme2}
                         alt=""
                         style={{ height: '24rem', width: '24rem' }}
                     />
                 </Col>
-                <Col>
+                <Col xs={12} md={6}>
                     {' '}
                     <img
                         src={meme3}

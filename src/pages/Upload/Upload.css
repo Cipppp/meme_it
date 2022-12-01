@@ -10,7 +10,7 @@
 }
 
 .upload-card {
-    padding: 5rem;
+    padding: 4rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -30,4 +30,14 @@
     font-size: 1.4rem;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.upload-text {
+    font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+    .upload-text {
+        /* center text */
+        text-align: center;
+    }
 }

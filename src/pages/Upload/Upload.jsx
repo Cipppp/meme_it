@@ -47,19 +47,19 @@ function Upload() {
     return (
         <>
             <div className="content">
-                <Row className="bg-white rounded upload-card">
+                <Row className="bg-white rounded-4 upload-card">
                     <Col
-                        className="d-flex flex-column align-items-center justify-content-center"
+                        className="d-flex flex-column upload-text"
                         xs={12}
                         md={6}
                     >
                         <Row>
-                            <h2 className="fs-1">
+                            <h2 className="fs-1 ">
                                 Ai tupeu și crezi că ești amuzant?
                             </h2>
                         </Row>
                         <Row>
-                            <p className="fs-5">
+                            <p className="fs-4">
                                 Trimite-ne un mail și poate ai noroc să ne apuce
                                 râsul când îți vedem meme-ul.
                             </p>
@@ -68,26 +68,29 @@ function Upload() {
                     <Col xs={12} md={6}>
                         <Form>
                             <Form.Group className="mb-3" controlId="Descriere">
-                                <Form.Label>Descriere</Form.Label>
+                                <Form.Label className="fw-bold">
+                                    Descriere
+                                </Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Descriere"
+                                    className="border border border-dark rounded-2"
                                 />
                             </Form.Group>
                             <Form.Group
                                 className="mb-3"
                                 controlId="exampleForm.ControlTextarea1"
                             >
-                                <Form.Label>
+                                <Form.Label className="fw-bold">
                                     Meme (jpg, jpeg, png, gif)
                                 </Form.Label>
                                 <div
                                     {...getRootProps({ className: 'dropzone' })}
+                                    className="p-5 border border border-dark rounded-2"
                                 >
                                     <input {...getInputProps()} />
-                                    <p>
-                                        Drag 'n' drop some files here, or click
-                                        to select files
+                                    <p className="text-muted">
+                                        drag & drop image or click to upload
                                     </p>
                                 </div>
                             </Form.Group>
