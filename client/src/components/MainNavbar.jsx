@@ -3,24 +3,21 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { ReactComponent as MemeITLogo } from '../assets/memeit_logo.svg';
-import AuthModal from '../components/AuthModal';
+import RegisterModal from '../components/RegisterModal';
+import LoginModal from './LoginModal';
 import './MainNavbar.css';
 
 function MainNavbar() {
-    const [modalShow, setModalShow] = useState(false);
-    const [isLogin, setIsLogin] = useState(true);
-    const [text, setText] = useState([]);
+    const [registerShow, setRegisterShow] = useState(false);
+    const [loginShow, setLoginShow] = useState(false);
+    const user = localStorage.getItem('token');
 
     const handleLoginModal = () => {
-        setText(['Welcome back!', 'Logare']);
-        setIsLogin(true);
-        setModalShow(true);
+        setLoginShow(true);
     };
 
     const handleRegisterModal = () => {
-        setText(['Welcome!', 'Creare cont']);
-        setIsLogin(false);
-        setModalShow(true);
+        setRegisterShow(true);
     };
 
     const handleLogout = () => {
@@ -35,21 +32,30 @@ function MainNavbar() {
                     <Navbar.Brand href="#home">
                         <MemeITLogo className="navbar-logo" />
                     </Navbar.Brand>
-                    <Nav className="ml-auto" variant="white">
-                        <Nav.Link onClick={handleLoginModal}>Logare</Nav.Link>
-                        <Nav.Link onClick={handleRegisterModal}>
-                            Creare cont
-                        </Nav.Link>
-                    </Nav>
+
+                    {!user ? (
+                        <Nav className="ml-auto" variant="white">
+                            <Nav.Link onClick={handleLoginModal}>
+                                Logare
+                            </Nav.Link>
+                            <Nav.Link onClick={handleRegisterModal}>
+                                Creare cont
+                            </Nav.Link>
+                        </Nav>
+                    ) : (
+                        <Nav className="ml-auto" variant="white">
+                            <Nav.Link onClick={handleLogout}>Delogare</Nav.Link>
+                        </Nav>
+                    )}
                 </Container>
             </Navbar>
 
-            <AuthModal
-                isLoign={isLogin}
-                show={modalShow}
-                text={text}
-                onHide={() => setModalShow(false)}
+            <RegisterModal
+                show={registerShow}
+                onHide={() => setRegisterShow(false)}
             />
+
+            <LoginModal show={loginShow} onHide={() => setLoginShow(false)} />
         </>
     );
 }

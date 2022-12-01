@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import './Upload.css';
 import Button from 'react-bootstrap/Button';
-import TestPage from '../TestPage/TestPage';
 import MemeSection from '../MemeSection/MemeSection';
 import { useDropzone } from 'react-dropzone';
 
@@ -30,6 +29,7 @@ function Upload() {
             <div>
                 <img
                     src={file.preview}
+                    alt="Something went wrong"
                     // Revoke data uri after image is loaded
                     onLoad={() => {
                         URL.revokeObjectURL(file.preview);
@@ -42,7 +42,7 @@ function Upload() {
     useEffect(() => {
         // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
         return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
-    }, []);
+    }, [files]);
 
     return (
         <>

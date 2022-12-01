@@ -7,10 +7,9 @@ import './AuthModal.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
-function AuthModal({ show, onHide, isLogin, text }) {
+function RegisterModal({ show, onHide }) {
     const [data, setData] = useState({
-        firstName: '',
-        lastName: '',
+        username: '',
         email: '',
         password: '',
     });
@@ -46,9 +45,7 @@ function AuthModal({ show, onHide, isLogin, text }) {
             centered
         >
             <Modal.Header closeButton>
-                {/* <Modal.Title id="contained-modal-title-vcenter"> */}
                 <MemeITLogo className="modal-logo" />
-                {/* </Modal.Title> */}
             </Modal.Header>
             <Modal.Body style={{ backgroundColor: '#6f3096' }}>
                 <Form
@@ -56,7 +53,7 @@ function AuthModal({ show, onHide, isLogin, text }) {
                     onSubmit={handleSubmit}
                 >
                     <h1 className="d-flex align-items-center justify-content-center modal-title">
-                        {text[0]}
+                        Welcome!
                     </h1>
                     <Form.Group
                         inlineclassName="mb-3"
@@ -66,29 +63,13 @@ function AuthModal({ show, onHide, isLogin, text }) {
                         <Form.Control
                             type="text"
                             placeholder="username"
-                            value={data.firstName}
+                            value={data.username}
                             onChange={(e) =>
-                                setData({ ...data, firstName: e.target.value })
+                                setData({ ...data, username: e.target.value })
                             }
                         />
                     </Form.Group>
 
-                    <Form.Group
-                        inlineclassName="mb-3"
-                        controlId="formBasicUsername"
-                    >
-                        <Form.Label className="fw-bold">last name</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="last name"
-                            value={data.lastName}
-                            onChange={(e) =>
-                                setData({ ...data, lastName: e.target.value })
-                            }
-                        />
-                    </Form.Group>
-
-                    {/* {isLogin == false ? ( */}
                     <Form.Group
                         inline
                         className="mb-3"
@@ -104,7 +85,6 @@ function AuthModal({ show, onHide, isLogin, text }) {
                             }
                         />
                     </Form.Group>
-                    {/* ) : null} */}
                     <Form.Group
                         inlineclassName="mb-3"
                         controlId="formBasicPassword"
@@ -119,10 +99,14 @@ function AuthModal({ show, onHide, isLogin, text }) {
                             }
                         />
                     </Form.Group>
-                    {error && <div className="text-danger">{error}</div>}
+                    {error && (
+                        <div className="text-danger mt-2 mb-2 fs-6">
+                            {error}
+                        </div>
+                    )}
                     <div className="d-flex flex-column align-items-center justify-content-center">
                         <Button type="submit" className="upload-button">
-                            {text[1]}
+                            Creare cont
                         </Button>
                     </div>
                 </Form>
@@ -131,4 +115,4 @@ function AuthModal({ show, onHide, isLogin, text }) {
     );
 }
 
-export default AuthModal;
+export default RegisterModal;
