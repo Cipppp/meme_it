@@ -1,0 +1,40 @@
+.upload-button {
+    background-color: #6f3096 !important;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.modal-title {
+    color: #6f3096;
+}
+
+.modal-form {
+    margin: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-title {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .upload-button {
+        font-size: 1rem;
+    }
+
+    .modal-logo {
+        width: 7.5rem;
+        height: 2.5rem;
+    }
+
+    .modal-form {
+        margin: 1rem;
+    }
+}

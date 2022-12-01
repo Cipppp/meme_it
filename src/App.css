@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 * {
-    font-family: 'GoldmanBold';
+    font-family: 'Merriweather';
 }
 
 body {
-    padding-top: 6s.3rem;
+    padding-top: 6.3rem;
 }

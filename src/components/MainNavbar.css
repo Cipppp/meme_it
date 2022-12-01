@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .upload-button {
+        font-size: 1rem;
+    }
+    .navbar-logo {
+        width: 7.5rem;
+        height: 2.5rem;
+    }
+}

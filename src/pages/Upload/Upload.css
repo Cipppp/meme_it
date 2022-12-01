@@ -32,9 +32,6 @@
     cursor: pointer;
 }
 
-.upload-text {
-    font-size: 1.5rem;
-}
 @media screen and (max-width: 768px) {
     .upload-text {
         /* center text */

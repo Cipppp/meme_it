@@ -5,8 +5,12 @@ import meme3 from '../../assets/image3.svg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import AuthModal from '../../components/AuthModal';
 function MemeSection({ thumbs }) {
+    const [modalShow, setModalShow] = React.useState(false);
+
     return (
         <Container className="mt-4">
             <Row>
@@ -17,6 +21,7 @@ function MemeSection({ thumbs }) {
                     className="d-flex flex-column align-items-center justify-content-center"
                     xs={12}
                     md={6}
+                    lg={4}
                 >
                     <img
                         src={meme1}
@@ -25,14 +30,24 @@ function MemeSection({ thumbs }) {
                         className="img-fluid"
                     />
                 </Col>
-                <Col xs={12} md={6}>
+                <Col
+                    className="d-flex flex-column align-items-center justify-content-center"
+                    xs={12}
+                    md={6}
+                    lg={4}
+                >
                     <img
                         src={meme2}
                         alt=""
                         style={{ height: '24rem', width: '24rem' }}
                     />
                 </Col>
-                <Col xs={12} md={6}>
+                <Col
+                    className="d-flex flex-column align-items-center justify-content-center"
+                    xs={12}
+                    md={6}
+                    lg={4}
+                >
                     {' '}
                     <img
                         src={meme3}
@@ -42,6 +57,7 @@ function MemeSection({ thumbs }) {
                 </Col>
                 <aside>{thumbs}</aside>
             </Row>
+            <Row></Row>
         </Container>
     );
 }
