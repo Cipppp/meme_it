@@ -52,7 +52,7 @@ function RegisterModal({ show, onHide }) {
                     className="p-4 bg-white rounded-4 modal-form"
                     onSubmit={handleSubmit}
                 >
-                    <h1 className="d-flex align-items-center justify-content-center modal-title">
+                    <h1 className="d-flex align-items-center justify-content-center modal-title fw-bold">
                         Welcome!
                     </h1>
                     <Form.Group

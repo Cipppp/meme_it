@@ -8,9 +8,9 @@ import Col from 'react-bootstrap/Col';
 
 function MemeSection({ thumbs }) {
     return (
-        <Container className="mt-4">
+        <Container>
             <Row>
-                <h1>Most Viewed</h1>
+                <h1 className="fw-bold mt-5 mb-5 meme-title">Most Viewed</h1>
             </Row>
             <Row className="mb-4">
                 <Col

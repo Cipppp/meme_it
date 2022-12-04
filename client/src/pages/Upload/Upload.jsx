@@ -54,12 +54,12 @@ function Upload() {
                         md={6}
                     >
                         <Row>
-                            <h2 className="fs-1 ">
+                            <h1 className="form-header fw-bold">
                                 Ai tupeu și crezi că ești amuzant?
-                            </h2>
+                            </h1>
                         </Row>
                         <Row>
-                            <p className="fs-4">
+                            <p className="form-sub-header">
                                 Trimite-ne un mail și poate ai noroc să ne apuce
                                 râsul când îți vedem meme-ul.
                             </p>

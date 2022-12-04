@@ -17,20 +17,23 @@ function Homepage() {
                         className="d-flex flex-column align-items-center justify-content-center"
                     >
                         <Row>
-                            <h1 className="d-flex align-items-center justify-content-center text-justify text-center">
+                            <h1 className="d-flex align-items-center justify-content-center text-justify text-center fw-bold">
                                 Partajarea de meme-uri nu a fost niciodată mai
                                 simplă!
                             </h1>
                         </Row>
                         <Row>
-                            <p className="text-center">
+                            <span className="text-center fw-light sub-header">
                                 Platforma ideală pentru studenții de la
                                 Politehnică, amuzați de câte materii o să pice
                                 semestrul asta.
-                            </p>
+                            </span>
                         </Row>
                         <Row>
-                            <Button className="upload-button" size="lg">
+                            <Button
+                                className="upload-button fw-normal"
+                                size="lg"
+                            >
                                 Upload a MEME
                             </Button>
                         </Row>

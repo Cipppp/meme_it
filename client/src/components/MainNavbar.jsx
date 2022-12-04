@@ -6,6 +6,7 @@ import { ReactComponent as MemeITLogo } from '../assets/memeit_logo.svg';
 import RegisterModal from '../components/RegisterModal';
 import LoginModal from './LoginModal';
 import './MainNavbar.css';
+import { ReactComponent as ToggleLogo } from '../assets/fe_app-menu.svg';
 
 function MainNavbar() {
     const [registerShow, setRegisterShow] = useState(false);
@@ -27,34 +28,45 @@ function MainNavbar() {
 
     return (
         <>
-            <Navbar className="fixed-top shadow" bg="white">
+            {/* Create a navbar for large devices and for smaller devices create a hamburger menu */}
+            <Navbar className="fixed-top shadow" bg="white" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
                         <MemeITLogo className="navbar-logo" />
                     </Navbar.Brand>
-
-                    {!user ? (
-                        <Nav className="ml-auto" variant="white">
-                            <Nav.Link onClick={handleLoginModal}>
-                                Logare
-                            </Nav.Link>
-                            <Nav.Link onClick={handleRegisterModal}>
-                                Creare cont
-                            </Nav.Link>
-                        </Nav>
-                    ) : (
-                        <Nav className="ml-auto" variant="white">
-                            <Nav.Link onClick={handleLogout}>Delogare</Nav.Link>
-                        </Nav>
-                    )}
+                    <Navbar.Toggle
+                        aria-controls="basic-navbar-nav"
+                        className="hamburger"
+                    >
+                        <ToggleLogo className="navbar-toggle" />
+                    </Navbar.Toggle>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        {!user ? (
+                            <Nav
+                                className="ml-auto d-flex align-items-center justify-content-center "
+                                variant="white"
+                            >
+                                <Nav.Link onClick={handleLoginModal}>
+                                    Logare
+                                </Nav.Link>
+                                <Nav.Link onClick={handleRegisterModal}>
+                                    Creare cont
+                                </Nav.Link>
+                            </Nav>
+                        ) : (
+                            <Nav className="ml-auto" variant="white">
+                                <Nav.Link onClick={handleLogout}>
+                                    Delogare
+                                </Nav.Link>
+                            </Nav>
+                        )}
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
-
             <RegisterModal
                 show={registerShow}
                 onHide={() => setRegisterShow(false)}
             />
-
             <LoginModal show={loginShow} onHide={() => setLoginShow(false)} />
         </>
     );

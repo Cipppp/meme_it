@@ -25,7 +25,7 @@ function Footer() {
                         <MDBIcon fab icon="facebook-f" />
                     </a>
                 </div>
-                <div className="text-center p-4">
+                <div className="text-center p-4" style={{ fontWeight: '100' }}>
                     Copyright 2022 | La muncă, nu la întins mâna.
                 </div>
             </section>

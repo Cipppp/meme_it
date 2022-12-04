@@ -17,14 +17,23 @@
     .upload-card {
         padding: 2rem;
     }
+
+    .form-sub-header {
+        font-size: 1.1rem;
+        font-weight: 100;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
 }
 
 .upload-button {
     background-color: #6f3096;
     border: none;
     color: white;
-    padding: 0.7rem 2.6rem;
+    padding: 0.7rem 4rem !important;
     text-align: center;
+    margin-top: 1rem !important;
+    margin-bottom: -1.5rem !important;
     text-decoration: none;
     display: inline-block;
     font-size: 1.4rem;
@@ -36,5 +45,24 @@
     .upload-text {
         /* center text */
         text-align: center;
+    }
+}
+
+/* on large devices add more padding to upload card */
+@media screen and (min-width: 992px) {
+    div > div.d-flex.flex-column.upload-text.col-md-6.col-12 > div > p {
+        font-size: 1.1rem !important;
+        font-weight: 100;
+        padding-right: 6rem;
+    }
+    .content {
+        padding: 8rem 14rem;
+    }
+
+    .form-header {
+        margin-top: 2rem !important;
+        font-size: 1.9rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
     }
 }

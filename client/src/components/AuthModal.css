@@ -36,5 +36,25 @@
 
     .modal-form {
         margin: 1rem;
+        padding: 2rem;
     }
+}
+
+@media screen and (min-width: 992px) {
+    .modal-title {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    /* body > div.fade.modal.show > div {
+        padding: 5rem;
+    }*/
+
+    /* body > div.fade.modal.show > div > div > div.modal-body > form {
+        padding: 4rem 2rem;
+    }
+
+    .upload-button {
+        margin-top: 2rem !important;
+    } */
 }

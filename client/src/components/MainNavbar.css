@@ -6,4 +6,17 @@
         width: 7.5rem;
         height: 2.5rem;
     }
+
+    /* center toggle elements */
+}
+
+/* make navbar responsive for mobile */
+/* move nav links to the right */
+.navbar-nav {
+    margin-left: auto;
+}
+
+/* make navbar links black color */
+#basic-navbar-nav > div > a {
+    color: #06114f !important;
 }
