@@ -5,8 +5,9 @@ const cors = require('cors');
 const connection = require('./db');
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
+const memeRoutes = require('./routes/memes');
 
-// database connection
+// Database connection
 connection();
 
 // middlewares
@@ -16,6 +17,8 @@ app.use(cors());
 // routes
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/memes', memeRoutes);
 
+// server listening 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));
