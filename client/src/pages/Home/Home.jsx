@@ -33,6 +33,7 @@ function Homepage() {
                             <Button
                                 className="upload-button fw-normal"
                                 size="lg"
+                                href="/#upload"
                             >
                                 Upload a MEME
                             </Button>

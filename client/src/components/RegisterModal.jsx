@@ -6,6 +6,7 @@ import { ReactComponent as MemeITLogo } from '../assets/memeit_logo.svg';
 import './AuthModal.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import Swal from 'sweetalert2'
 
 function RegisterModal({ show, onHide }) {
     const [data, setData] = useState({
@@ -24,6 +25,25 @@ function RegisterModal({ show, onHide }) {
             const { data: res } = await axios.post(url, data);
             navigate('/');
             console.log(res.message);
+
+            localStorage.setItem('token', res.token);
+            // show success message
+            Swal.fire({
+                title: 'Success!',
+                text: 'Congrats! You are now registered!',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.reload();
+                      // redirect to home
+                        navigate('/');
+
+                    }
+                  }
+                )
+
+            
         } catch (error) {
             if (
                 error.response &&
@@ -32,6 +52,16 @@ function RegisterModal({ show, onHide }) {
             ) {
                 setError(error.response.data.message);
             }
+
+            // show error message based on error response
+            Swal.fire({
+                title: 'Error!',
+                text: 'Something went wrong!',
+                icon: 'error',
+                confirmButtonText: 'Bad'
+                })
+
+
         }
         console.log(data);
     };

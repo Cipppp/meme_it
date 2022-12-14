@@ -57,4 +57,17 @@
     .upload-button {
         margin-top: 2rem !important;
     } */
+
+    /* add margin bottom to modal button */
+    body > div.fade.modal.show > div > div > div.modal-body > form > div.d-flex.flex-column.align-items-center.justify-content-center > button {
+        margin-bottom: 0.4rem !important;
+    }
+
+}
+
+/* Add margin bottom to modal button for smaller screens */
+@media screen and (max-width: 992px) {
+    body > div.fade.modal.show > div > div > div.modal-body > form > div.d-flex.flex-column.align-items-center.justify-content-center > button {
+        margin-bottom: 0.4rem !important;
+    }
 }

@@ -6,28 +6,55 @@ import './Upload.css';
 import Button from 'react-bootstrap/Button';
 import MemeSection from '../MemeSection/MemeSection';
 import { useDropzone } from 'react-dropzone';
+import Swal from 'sweetalert2'
 
 function Upload() {
     const [files, setFiles] = useState([]);
     const { getRootProps, getInputProps } = useDropzone({
+        // accept only .jpg, .jpeg și .gif files
         accept: {
-            'image/*': [],
+            'image/jpeg': ['.jpg', '.jpeg'],
+            'image/gif': ['.gif'],
+            'image/png': ['.png'],
         },
+
         onDrop: (acceptedFiles) => {
             setFiles(
                 acceptedFiles.map((file) =>
                     Object.assign(file, {
                         preview: URL.createObjectURL(file),
                     })
+
+                    
                 )
             );
         },
+        // when uploading a file that is not an image, show an error
+        onDropRejected: (fileRejections) => {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
+        },
+        // when is successful, show a success message
+        onDropAccepted: (fileRejections) => {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+
     });
 
     const thumbs = files.map((file) => (
         <div key={file.name}>
             <div>
-                <img
+            
+            <img
                     src={file.preview}
                     alt="Something went wrong"
                     // Revoke data uri after image is loaded
@@ -39,6 +66,15 @@ function Upload() {
         </div>
     ));
 
+    const handleOnClick = () => {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
+    }
+
     useEffect(() => {
         // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
         return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
@@ -46,7 +82,7 @@ function Upload() {
 
     return (
         <>
-            <div className="content">
+            <div id="upload" className="content">
                 <Row className="bg-white rounded-4 upload-card">
                     <Col
                         className="d-flex flex-column upload-text"
@@ -96,7 +132,7 @@ function Upload() {
                             </Form.Group>
 
                             <div className="d-flex flex-column align-items-center justify-content-center">
-                                <Button className="upload-button" type="submit">
+                                <Button className="upload-button" type="submit" onClick={handleOnClick}>
                                     Trimite
                                 </Button>
                             </div>
