@@ -170,11 +170,11 @@ See the [open issues](https://github.com/Cipppp/meme_it/issues) for a full list 
 ### Backend
 
 -   [x] 1. DB schema for users
--   [ ] 2. CRUD - Create, Read, Update, Delete
+-   [?] 2. CRUD - Create, Read, Update, Delete
 -   [x] 3. Register & Login
--   [ ] 4. Input Validation
--   [ ] 5. Protected Endpoints
--   [ ] 6. BONUS: File Upload
+-   [x] 4. Input Validation
+-   [-] 5. Protected Endpoints
+-   [-] 6. BONUS: File Upload
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
